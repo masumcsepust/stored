@@ -1,0 +1,10 @@
+<button (click)="Logout()">Logout</button>
+<div class="layout">
+    <app-movie-list [movies]="movies" (selectMovie)="selectMovie($event)"
+    (editedMovie)="editMovie($event)" (createNewMovie)="createNewMovie($event)"
+    (deletedMovie)="deletedMovie($event)"></app-movie-list>
+    <app-movie-details [movie]="this.selectedMovie" (updateDetails)="selectMovie($event)"></app-movie-details>
+    <app-movie-forms *ngIf="editedMovie" [movie]="this.editedMovie" (movieCreated)="movieCreated($event)"
+    (movieUpdated)="movieUpdated($event)"></app-movie-forms>
+
+</div>
